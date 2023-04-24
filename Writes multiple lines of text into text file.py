@@ -59,7 +59,8 @@ with open("mylife.txt", "w") as file:
 
 
 #Opens and reads each individual line in the text file
-
+with open("mylife.txt") as file:
+    lines = [line.rstrip() for line in file]
 
 #Creates the main program
 
