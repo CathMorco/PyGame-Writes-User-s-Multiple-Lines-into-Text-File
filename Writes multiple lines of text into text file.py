@@ -32,7 +32,8 @@ with open("mylife.txt", "w") as file:
     inputLines = input(str("Are there more lines y/n? "))
     count = 0
     while not inputLines or inputLines[0].lower() not in ['y', 'n']:
-        inputLines=input(str("ERROR: Please input either 'y' or 'n'. Please try again: "))
+        print("ERROR: Please input either 'y' or 'n'. Please try again: ")
+        inputLines = input("Are there more lines y/n? ")
     while inputLines[0].lower() == 'y':
         line = input(str("Enter line: "))
         file.write(line + "\n")
