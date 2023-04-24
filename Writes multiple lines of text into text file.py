@@ -39,7 +39,7 @@ with open("mylife.txt", "w") as file:
         inputLines = input(str("Are there more lines y/n? "))
         count = 0
         # Loop until the user enters a valid input (either 'y' or 'n')
-        while not moreLines or moreLines[0].lower() not in ['y', 'n']:
+        while not inputLines or inputLines[0].lower() not in ['y', 'n']:
             # Increment the count of invalid inputs
             count += 1
             
@@ -51,7 +51,7 @@ with open("mylife.txt", "w") as file:
                 count = 0
             else:
                 # Ask the user for input again, indicating that their previous input was invalid
-                moreLines = input("ERROR: Please input either 'y' or 'n'. Please try again: ")
+                inputLines = input("ERROR: Please input either 'y' or 'n'. Please try again: ")
 
         # If the user input is 'n', exit the loop
         if inputLines[0].lower() == 'n':
