@@ -155,3 +155,5 @@ def mainProgram(lines,texts,title):
         pygame.display.update()
 
 #Runs the program for the text file
+print ("\n Look back at the display screen, scroll if your texts were too long :D")
+mainProgram(lines,lines,"My Life Display Screen")
