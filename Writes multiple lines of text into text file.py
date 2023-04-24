@@ -29,32 +29,32 @@ with open("mylife.txt", "w") as file:
     #Writes the line into the file
     file.write(line + "\n")
     #Asks user if there are more lines to be inputted
-    moreLines = input(str("Are there more lines y/n? "))
-    invalid_count = 0
-    while not moreLines or moreLines[0].lower() not in ['y', 'n']:
-        moreLines=input(str("Invalid input, please only enter 'y', or 'n'"))
-    while moreLines[0].lower() == 'y':
+    inputLines = input(str("Are there more lines y/n? "))
+    count = 0
+    while not inputLines or inputLines[0].lower() not in ['y', 'n']:
+        inputLines=input(str("ERROR: Please input either 'y' or 'n'. Please try again: "))
+    while inputLines[0].lower() == 'y':
         line = input(str("Enter line: "))
         file.write(line + "\n")
-        moreLines = input(str("Are there more lines y/n? "))
-        invalid_count = 0
+        inputLines = input(str("Are there more lines y/n? "))
+        count = 0
         # Loop until the user enters a valid input (either 'y' or 'n')
         while not moreLines or moreLines[0].lower() not in ['y', 'n']:
             # Increment the count of invalid inputs
-            invalid_count += 1
+            count += 1
             
             # If there have been two or more invalid inputs, print an error message
-            if invalid_count >= 2:
-                print("Invalid input, please only enter 'y', or 'n'")
+            if count >= 2:
+                print("ERROR: Please input either 'y' or 'n'. Please try again: ")
                 
                 # Reset the invalid count to zero
-                invalid_count = 0
+                count = 0
             else:
                 # Ask the user for input again, indicating that their previous input was invalid
-                moreLines = input("Invalid input, please only enter 'y', or 'n'")
+                moreLines = input("ERROR: Please input either 'y' or 'n'. Please try again: ")
 
         # If the user input is 'n', exit the loop
-        if moreLines[0].lower() == 'n':
+        if inputLines[0].lower() == 'n':
             break
 
 
